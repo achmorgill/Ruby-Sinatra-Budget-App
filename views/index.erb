@@ -1,8 +1,19 @@
 <table>
   <tr>
-    <th> </th>
-    <th>Name</th>
-    <th>House</th>
-    <th>Age</th>
-  
+    <th>Name          </th>
+    <th>Budget        </th>
+    <th>Transaction   </th>
+    <th>Overdraft     </th>
+    <th>Overspent     </th>
   </tr>
+
+  </tr>
+    <% @users.each do |user| %>
+  
+      <td> <%= user.name %> </td>
+      <td> <%= user.budget %> </td>
+      <td> <%= user.transaction_id %></td>
+      <td> <%= user.overdraft_limit%> </td>
+      <td> <%= user.budget_overspend_flag %></td>
+    </tr>
+    <% end %>
