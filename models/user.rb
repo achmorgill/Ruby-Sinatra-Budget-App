@@ -6,9 +6,9 @@ class User
 
   def initialize(params)
     @name = params['name']
-    @budget = params['budget'].to_i
+    @budget = params['budget'].to_f
     @transaction_id = params['transaction_id']
-    @overdraft_limit = params['overdraft_limit'].to_i
+    @overdraft_limit = params['overdraft_limit'].to_f
     @budget_overspend_flag = params['budget_overspend_flag'].to_i
   end
 

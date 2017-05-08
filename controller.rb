@@ -1,11 +1,10 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
-require_relative('./models/user.rb')
-require_relative('./models/transaction.rb')
-require_relative('./models/category.rb')
 
-get '/users' do
-  @users = User.all()
-  erb(:index)
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require_relative('controllers/user_controller')
+# require_relative('controllers/category_controller')
+# require_relative('controllers/transaction_controller')
+
+get '/' do
+  erb( :index )
 end

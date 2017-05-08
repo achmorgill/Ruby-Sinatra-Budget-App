@@ -56,9 +56,9 @@ transaction4.save
 
 user1 = User.new({
   'name' => "Joe Bloggs",
-  'budget' => "1000",
+  'budget' => "1000.00",
   'transaction_id' => transaction1.id,
-  'overdraft_limit' => "200",
+  'overdraft_limit' => "200.00",
   'budget_overspend_flag' => "0" 
   })
 user1.save
