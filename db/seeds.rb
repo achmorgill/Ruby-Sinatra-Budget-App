@@ -25,25 +25,25 @@ category2.save
 category3.save
 
 transaction1 = Transaction.new({
-  'date' => "April",
+  'transaction_date' => "2017-5-1",
   'category_id' => category1.id,
   'amount' => 50,
   'description' => "Tesco"
   })
 transaction2 = Transaction.new({
-  'date' => "4 April 2017",
+  'transaction_date' => "2017-5-2",
   'category_id' => category2.id,
   'amount' => 300,
   'description' => "Monthly rent"
   })
 transaction3 = Transaction.new({
-  'date' => "6 April 2017",
+  'transaction_date' => "2017-5-3",
   'category_id' => category1.id,
   'amount' => 12,
   'description' => "Tesco Petrol"
   })
 transaction4 = Transaction.new({
-  'date' => "9 April 2017",
+  'transaction_date' => "2017-5-6",
   'category_id' => category3.id,
   'amount' => 127,
   'description' => "Insurance"

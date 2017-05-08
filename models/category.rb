@@ -23,11 +23,11 @@ class Category
     results = SqlRunner.run(sql)
     return results.map{|category| Category.new(category)}
   end
-
-  def Category.delete_all()
-    sql = "DELETE FROM categories"
-    SqlRunner.run(sql)
-  end
+# This could cause a Foreign Key violation as items in the transaction table refer to items in the category table
+  # def Category.delete_all()
+  #   sql = "DELETE FROM categories"
+  #   SqlRunner.run(sql)
+  # end
 
   def destroy(id)
     sql = "DELETE FROM categories WHERE id = #{id}"

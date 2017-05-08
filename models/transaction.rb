@@ -4,17 +4,17 @@ require_relative ('../db/sqlrunner.rb')
 class Transaction
 
   attr_reader :id
-  attr_accessor :date,:description, :category_id, :amount
+  attr_accessor :transaction_date,:description, :category_id, :amount
 
   def initialize (params)
-    @date = params['id']
+    @transaction_date = params['transaction_date']
     @category_id = params['category_id']
     @amount = params['amount']
     @description = params['description']
   end
 
   def save()
-    sql =  "INSERT INTO transactions (date,category_id,amount,description) VALUES ('#{@date}','#{@category_id}',#{@amount},'#{@description}') RETURNING *"
+    sql =  "INSERT INTO transactions (transaction_date,category_id,amount,description) VALUES ('#{@transaction_date}','#{@category_id}',#{@amount},'#{@description}') RETURNING *"
     results = SqlRunner.run(sql).first
     @id = results['id'].to_i
   end
@@ -30,7 +30,7 @@ class Transaction
     SqlRunner.run(sql)
   end
 
-  def destroy()
+  def destroy(id)
     sql = "DELETE FROM transactions WHERE id = #{id}"
     SqlRunner.run(sql)
   end
@@ -42,7 +42,7 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (date,category_id,amount,description) = ('#{@date}','#{@category_id}', '#{@amount}', '#{@description}') WHERE id = #{@id}"  
+    sql = "UPDATE transactions SET (date,category_id,amount,description) = ('#{@transaction_date}','#{@category_id}', '#{@amount}', '#{@description}') WHERE id = #{@id}"  
     results = SqlRunner.run(sql)
     return results
 end

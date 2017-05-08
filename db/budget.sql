@@ -12,7 +12,7 @@ logo VARCHAR(255)
 CREATE TABLE transactions
 (
 id SERIAL4 PRIMARY KEY,
-date VARCHAR(255),
+transaction_date DATE,
 category_id INT4 REFERENCES categories(id),
 amount NUMERIC(8,2),
 description VARCHAR(255)
