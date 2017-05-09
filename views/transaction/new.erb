@@ -13,7 +13,8 @@
   </select>
 
   <label for="categorySelect">Select Category </label>
-  <select id = "categorySelect" name="category_id">
+    <select required id = "categorySelect" name="category_id">
+    <option value = "">Please Select</option>
     <% @categories.each do |category| %>
     <option value="<%=category.id%>"><%=category.name%></option>
     <%end%>
