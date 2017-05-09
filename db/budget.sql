@@ -6,8 +6,7 @@ DROP TABLE categories;
 CREATE TABLE categories
 (
 id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
-logo VARCHAR(255)
+name VARCHAR(255)
 );
 
 

@@ -9,37 +9,34 @@ class CategoryTest < Minitest::Test
   def setup
     params1= {
       'name'=> "Supermarket",
-      'logo' => "this is a grocery logo",
       'id' => 2
     }
     @category1 = Category.new(params1)
+
+    params3 = {
+      'name' => "Joe Bloggs",
+      'budget' => 1000,
+      'overdraft_limit' => 200,
+      'budget_overspend_flag' => 0, 
+      'id'=> 5
+    }
+    @user1 = User.new(params3)
+
     params2 = {
       'transaction_date'=> "2017-5-4",
-      'category1_id'=> 2,
+      'category_id'=> 2,
+      'user_id'=>5,
       'amount'=> 50,
       'description'=> "Tesco",
       'id' => 4
     }
     @transaction1 = Transaction.new(params2)
 
-    params3 = {
-      'name' => "Joe Bloggs",
-      'budget' => 1000,
-      'transaction_id' => 4,
-      'overdraft_limit' => 200,
-      'budget_overspend_flag' => 0, 
-      'id'=> 5
-    }
-    @user1 = User.new(params3)
   end
 
 
   def test_category_name
     assert_equal("Supermarket",@category1.name)
-  end
-
-  def test_category_logo
-    assert_equal("this is a grocery logo",@category1.logo)
   end
 
   def test_transaction_date

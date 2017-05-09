@@ -8,29 +8,23 @@ User.delete_all
 
 
 category1 = Category.new({
-  'name' => "Grocery",
-  'logo' => "this is a grocery logo"
+  'name' => "Grocery"
   })
 
 category2 = Category.new({
-  'name' => "House",
-  'logo' => "this is a house logo"
+  'name' => "House"
   })
 category3 = Category.new({
-  'name' => "Car",
-  'logo' => "this is a car logo"
+  'name' => "Car"
   })
 category4 = Category.new({
   'name' => "Credit Card",
-  'logo' => "this is a card logo"
   })
 category5 = Category.new({
-  'name' => "Telephone",
-  'logo' => "this is a phone logo"
+  'name' => "Telephone"
   })
 category6 = Category.new({
-  'name' => "Leisure",
-  'logo' => "this is a leisure logo"
+  'name' => "Leisure"
   })
 
 category1.save
@@ -59,7 +53,7 @@ transaction2 = Transaction.new({
   'transaction_date' => "2017-5-2",
   'category_id' => category2.id,
   'user_id'=> user1.id,
-  'amount' => 200.16,
+  'amount' => 450.00,
   'description' => "Monthly rent"
   })
 transaction3 = Transaction.new({
@@ -80,22 +74,57 @@ transaction5 = Transaction.new({
   'transaction_date' => "2017-5-9",
   'category_id' => category4.id,
   'user_id'=> user1.id,
-  'amount' => 127.18,
-  'description' => "Mobile Phone Topup"
+  'amount' => 145.18,
+  'description' => "TSB Visa Bill"
   })
 transaction6 = Transaction.new({
   'transaction_date' => "2017-5-6",
-  'category_id' => category5.id,
+  'category_id' => category6.id,
   'user_id'=> user1.id,
-  'amount' => 127.18,
+  'amount' => 45.00,
   'description' => "Gym Membership"
   })
 transaction6 = Transaction.new({
   'transaction_date' => "2017-5-4",
-  'category_id' => category5.id,
+  'category_id' => category6.id,
+  'user_id'=> user1.id,
+  'amount' => 27.18,
+  'description' => "Theatre Tickets"
+  })
+transaction7 = Transaction.new({
+  'transaction_date' => "2017-5-1",
+  'category_id' => category1.id,
+  'user_id'=> user1.id,
+  'amount' => 87.45,
+  'description' => "Asda"
+  })
+transaction8 = Transaction.new({
+  'transaction_date' => "2017-5-1",
+  'category_id' => category1.id,
+  'user_id'=> user1.id,
+  'amount' => 50.00,
+  'description' => "Asda"
+  })
+transaction9 = Transaction.new({
+  'transaction_date' => "2017-5-2",
+  'category_id' => category2.id,
+  'user_id'=> user1.id,
+  'amount' => 43.00,
+  'description' => "Electricity Bill"
+  })
+transaction10 = Transaction.new({
+  'transaction_date' => "2017-5-3",
+  'category_id' => category3.id,
+  'user_id'=> user1.id,
+  'amount' => 25.17,
+  'description' => "Tesco Petrol"
+  })
+transaction11 = Transaction.new({
+  'transaction_date' => "2017-5-6",
+  'category_id' => category2.id,
   'user_id'=> user1.id,
   'amount' => 127.18,
-  'description' => "Theatre Tickets"
+  'description' => "Gas Bill"
   })
 
 
@@ -106,6 +135,11 @@ transaction3.save
 transaction4.save
 transaction5.save
 transaction6.save
+transaction7.save
+transaction8.save
+transaction9.save
+transaction10.save
+transaction11.save
 
 
 binding.pry

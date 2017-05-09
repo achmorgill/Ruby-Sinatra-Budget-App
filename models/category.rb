@@ -3,17 +3,16 @@ class Category
 
 
   attr_reader :id
-  attr_accessor :name, :logo
+  attr_accessor :name
 
   def initialize(params)
     @id = params['id'].to_i 
     @name = params['name']
-    @logo = params['logo'] 
   end
 
 
   def save()
-    sql =  "INSERT INTO categories (name,logo) VALUES ('#{@name}','#{@logo}') RETURNING *"
+    sql =  "INSERT INTO categories (name) VALUES ('#{@name}') RETURNING *"
     results = SqlRunner.run(sql).first
     @id = results['id'].to_i
   end
@@ -41,7 +40,7 @@ class Category
   end
 
   def update()
-    sql = "UPDATE categories SET (name, logo) = ('#{@name}','#{@logo}') WHERE id = #{@id}"  
+    sql = "UPDATE categories SET (name) = ('#{@name}') WHERE id = #{@id}"  
     results = SqlRunner.run(sql)
     return results
 

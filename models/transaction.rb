@@ -21,7 +21,7 @@ class Transaction
   end
 
   def Transaction.all()
-    sql = "SELECT * FROM transactions" 
+    sql = "SELECT * FROM transactions ORDER BY transaction_date" 
     results = SqlRunner.run(sql)
     return results.map{|transaction| Transaction.new(transaction)}
   end
@@ -33,9 +33,9 @@ class Transaction
   end
 
   def Transaction.by_date()
-    start_date = '17-5-1'
-    end_date = '17-5-31'
-    sql = "SELECT * FROM transactions WHERE transaction_date >= '#{start_date}' AND transaction_date <= '#{end_date}'"
+    start_date = '1-May-17'
+    end_date = '31-may-17'
+    sql = "SELECT * FROM transactions WHERE transaction_date >= '#{start_date}' AND transaction_date <= '#{end_date}' ORDER BY transaction_date"
     results = SqlRunner.run(sql)
     return results.map{|transaction| Transaction.new(transaction)}
   end
@@ -70,10 +70,15 @@ class Transaction
 
     transaction_total = 0
     transactions = Transaction.all()
-
     transactions.each {|transaction| transaction_total += transaction.amount}
-
    return transaction_total.to_f
+ end
+
+ def Transaction.total_last10_transactions()
+     total_last10 = 0
+     transactions = Transaction.last10()
+     transactions.each {|transaction| total_last10 += transaction.amount}
+     return total_last10.to_f
  end
 
  def Transaction.total_transactions_by_category(id)
@@ -95,20 +100,6 @@ class Transaction
   return budget_overspend_flag
  end
 
-
- # def Transaction.check_within_overdraft_limit()
- #  transaction_total = Transaction.total_all_transactions.to_f
- #  sql = "SELECT user_budget FROM users WHERE name = 'Gill Liddle'"
- #  overspend_flag = SqlRunner.run(sql).first["budget_overspend_flag
- #    "]
- #  if overspend_flag = 1
- #    transaction_total = Transaction.total_all_transactions.to_f
-
- #  else
- #  end
-
-
- # end
 
 def Transaction.total_transactions_by_date()
   start_date='1-5-17'
