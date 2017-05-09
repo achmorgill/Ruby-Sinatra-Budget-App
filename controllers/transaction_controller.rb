@@ -14,7 +14,7 @@ get '/transactions' do
 end
 
 get '/transactions/by_date' do
- @transactions = Transaction.total_transaction_by_date()
+ @transactions = Transaction.by_date()
  @categories = Category.all()
  @users = User.all()
  erb(:"transaction/index")

@@ -2,9 +2,9 @@ require_relative ('../models/category.rb')
 require_relative ('../models/transaction.rb')
 require_relative ('../models/user.rb')
 require ('pry-byebug')
-User.delete_all
 Transaction.delete_all
 Category.delete_all
+User.delete_all
 
 
 category1 = Category.new({

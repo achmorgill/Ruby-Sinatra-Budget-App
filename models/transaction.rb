@@ -32,6 +32,14 @@ class Transaction
     return results.map{|transaction| Transaction.new(transaction)}
   end
 
+  def Transaction.by_date()
+    start_date = '17-5-1'
+    end_date = '17-5-31'
+    sql = "SELECT * FROM transactions WHERE transaction_date >= '#{start_date}' AND transaction_date <= '#{end_date}'"
+    results = SqlRunner.run(sql)
+    return results.map{|transaction| Transaction.new(transaction)}
+  end
+
   def Transaction.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
@@ -87,6 +95,7 @@ class Transaction
   return budget_overspend_flag
  end
 
+
  # def Transaction.check_within_overdraft_limit()
  #  transaction_total = Transaction.total_all_transactions.to_f
  #  sql = "SELECT user_budget FROM users WHERE name = 'Gill Liddle'"
@@ -102,8 +111,8 @@ class Transaction
  # end
 
 def Transaction.total_transactions_by_date()
-  start_date="1-5-17"
-  end_date="31-5-17"
+  start_date='1-5-17'
+  end_date='31-5-17'
   sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date >='#{start_date}' AND transaction_date <= '#{end_date}'"
   total_transactions_by_date = SqlRunner.run(sql).first["total"].to_f
   return total_transactions_by_date
