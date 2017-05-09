@@ -34,13 +34,13 @@ class CategoryTest < Minitest::Test
   end
 
 
-  # def test_category_name
-  #   assert_equal("Supermarket",@category1.name)
-  # end
+  def test_category_name
+    assert_equal("Supermarket",@category1.name)
+  end
 
-  # def test_category_logo
-  #   assert_equal("this is a grocery logo",@category1.logo)
-  # end
+  def test_category_logo
+    assert_equal("this is a grocery logo",@category1.logo)
+  end
 
   def test_transaction_date
     assert_equal("2017-5-4",@transaction1.transaction_date)

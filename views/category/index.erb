@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Category Type</th>
+    </tr>
+  </thead>
+  <tr>
+    <% @categories.each do |category|%>
+      <td><%= category.name%></td>
+      <tr>
+    <%end%>
+    <br>
+    </tr>
+<a href="/categories/new">Add a New Category</a>
+
+
+
+
+
