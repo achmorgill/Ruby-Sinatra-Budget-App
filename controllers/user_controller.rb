@@ -8,3 +8,16 @@ get '/users' do
   @users = User.all()
   erb(:"user/index")
 end
+
+get '/users/:id/edit' do # edit
+  @user = User.find( params[:id] )
+  erb( :"user/edit" )
+end
+
+post '/users/:id' do
+  User.new(params).update
+  redirect to '/users'
+end
+
+
+

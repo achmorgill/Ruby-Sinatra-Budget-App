@@ -1,4 +1,5 @@
-
+<a href="/">Home Page</a>
+<tr>
 <table>
 <thead>
   <tr>
@@ -6,9 +7,10 @@
     <th>Budget        </th>
     <th>Transaction   </th>
     <th>Overdraft     </th>
-    <th>Overspent     </th>
+    <th>Exceeded Budget     </th>
   </tr>
 </thead>
+</table>
   </tr>
     <% @users.each do |user| %>
   
@@ -18,4 +20,7 @@
       <td> <%= sprintf("%.2f",user.overdraft_limit)%> </td>
       <td> <%= user.budget_overspend_flag %></td>
     </tr>
+    <a href="/users/<%= user.id %>/edit">Update Your Details</a>
     <% end %>
+
+

@@ -1,16 +1,21 @@
-<table>
-  <thead>
-    <tr>
-      <th>Category Type</th>
-    </tr>
-  </thead>
+<a href="/">Home Page</a>
+<tr>
+  <table>
+    <thead>
+      <tr>
+        <th>Category Type</th>
+      </tr>
+    </thead>
+  </table>
+  
   <tr>
     <% @categories.each do |category|%>
-      <td><%= category.name%></td>
-      <tr>
-    <%end%>
-    <br>
+    <td><%= category.name%></td>
+    <tr>
+      <%end%>
+      <br>
     </tr>
+
 <a href="/categories/new">Add a New Category</a>
 
 

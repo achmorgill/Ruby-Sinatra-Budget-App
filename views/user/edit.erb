@@ -1,0 +1,18 @@
+<h2>userUpdate</h2>
+
+<form method="post" action="/users/<%= @user.id %>">
+
+  <label for="userName">Name </label>
+  <input type="text" id="userName" name="name">
+
+  <label for="userBudget">Budget </label>
+  <input type="text" id="userBudget" name="budget">
+
+  <label for="userOverdraftLimit">Overdraft </label>
+  <input type="text" id="userOverdraftLimit" name="overdraft_limit">
+
+  <label for="userBudgetOverspendFlag">Overdraft_flag </label>
+  <input type="text" id="userBudgetOverspendFlag" name="overdraft_limit">
+
+  <input type="submit"  name = "userUpdate">
+</form>

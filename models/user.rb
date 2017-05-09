@@ -10,6 +10,7 @@ class User
     @transaction_id = params['transaction_id']
     @overdraft_limit = params['overdraft_limit'].to_f
     @budget_overspend_flag = params['budget_overspend_flag'].to_i
+    @id = params['id'].to_i if !params['id'].nil?
   end
 
   def save()
@@ -40,7 +41,7 @@ def User.find(id)
   return User.new(results.first)
 end
 def update()
-    sql = "UPDATE users SET (name,budget,transaction_id,overdraft_limit,budget_overspend_flag) = ('#{@name}','#{@budget}', '#{@transaction_id}', '#{@overdraft_limit}', '#{@budget_overspend_flag}') WHERE id = #{@id}"  
+    sql = "UPDATE users SET (name,budget,overdraft_limit,budget_overspend_flag) = ('#{@name}',#{@budget}, #{@overdraft_limit}, #{@budget_overspend_flag}) WHERE id = #{@id}"  
     results = SqlRunner.run(sql)
     return results
 end
