@@ -17,8 +17,11 @@ get '/transactions/by_date' do
  @transactions = Transaction.by_date()
  @categories = Category.all()
  @users = User.all()
+ @transactions_total = Transaction.total_all_transactions().to_f
+ @total_by_date = Transaction.total_transactions_by_date().to_f
  erb(:"transaction/index")
 end
+
 
 
 get '/transactions/new' do

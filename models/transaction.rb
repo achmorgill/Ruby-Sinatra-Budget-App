@@ -62,7 +62,7 @@ class Transaction
     return results
   end
 
-  def Transaction.total_all_transactions
+  def Transaction.total_all_transactions()
 
     # we could have simply pulled the date back from the database with :
     # SELECT sum(all) FROM transactions;
