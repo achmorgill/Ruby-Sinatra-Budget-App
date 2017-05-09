@@ -26,6 +26,12 @@ class Transaction
     return results.map{|transaction| Transaction.new(transaction)}
   end
 
+  def Transaction.last10()
+    sql = "SELECT * FROM transactions ORDER BY transaction_date DESC LIMIT 10"
+    results = SqlRunner.run(sql)
+    return results.map{|transaction| Transaction.new(transaction)}
+  end
+
   def Transaction.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
@@ -95,7 +101,9 @@ class Transaction
 
  # end
 
-def Transaction.total_transactions_by_date(start_date,end_date)
+def Transaction.total_transactions_by_date()
+  start_date="1-5-17"
+  end_date="31-5-17"
   sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date >='#{start_date}' AND transaction_date <= '#{end_date}'"
   total_transactions_by_date = SqlRunner.run(sql).first["total"].to_f
   return total_transactions_by_date

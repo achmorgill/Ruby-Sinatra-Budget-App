@@ -1,0 +1,21 @@
+<h2>transactionUpdate</h2>
+<form method="post" action="/transactions/<%=@transaction.id%>">
+
+  <label for="transactionDate">Date</label>
+    <input type="text" value=<%=transaction.transaction_date%> id="transactionDate"name="transaction_date">
+
+  <label for="transactionCategory">Category</label>
+    <input type="text" id="transactionCategory" name="transaction.category_id">
+
+  <label for="transactionUser">User</label>
+    <input type="text" id="transactionUser" name="transaction.user_id">
+
+  <label for="transactionAmount">Amount</label>
+    <input type="text" id="transactionUser" name="transaction.amount">
+
+  <label for="transactionDesc">Description</label>
+    <input type="text" id="transactionDesc" name="transaction.description">
+
+
+  <input type="submit" name=transactionUpdate>
+  </form>

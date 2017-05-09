@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Date</th>
       <th>User</th>
       <th>Category</th>
@@ -9,16 +10,35 @@
       <th>Amount</th>
     </tr>
   </thead>
-  <tr>
-  <% @transactions.each do |transaction|%>
-    <td><%=transaction.transaction_date%></td> 
-    <td><%=transaction.user_id%></td>
-    <td><%=transaction.category_id%></td>
-    <td><%=transaction.description%></td>
-    <td><%=sprintf("%.2f",transaction.amount)%></td>
-    <tr>
+  <tbody>
+    <% @transactions.each do |transaction|%>
+     
+      <td>
+      <a href="/transactions/<%=transaction%>/edit">Update</a>
+      </td>
+
+        <td><%=transaction.transaction_date%></td> 
+
+        <% @users.each do |user| %>
+          <% if user.id == transaction.user_id %>
+            <td><%=user.name%></td>
+          <%end%>
+        <%end%>
+
+        <% @categories.each do |category| %>
+          <% if category.id == transaction.category_id %>
+            <td><%=category.name%></td>
+          <%end%>
+        <%end%>
+       
+
+        <td><%=transaction.description%></td>
+        <td><%=sprintf("%.2f",transaction.amount)%></td> 
+
+      </tr>
     <%end%> 
-  </tr> 
-  <br>
-  <a href="/transactions/new">Add a New Transaction</a>
+  </tbody>
+</table>
+<a href="/transactions/new">Add a New Transaction</a>
+
 

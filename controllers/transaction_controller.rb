@@ -2,12 +2,24 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/transaction.rb')
+require_relative('../models/user.rb')
+require_relative('../models/category.rb')
 
 
 get '/transactions' do
- @transactions = Transaction.all()
+ @transactions = Transaction.last10()
+ @categories = Category.all()
+ @users = User.all()
  erb(:"transaction/index")
 end
+
+get '/transactions/by_date' do
+ @transactions = Transaction.total_transaction_by_date()
+ @categories = Category.all()
+ @users = User.all()
+ erb(:"transaction/index")
+end
+
 
 get '/transactions/new' do
   @transactions = Transaction.all()
@@ -20,3 +32,14 @@ post '/transactions' do
   Transaction.new(params).save
   redirect to '/transactions'
 end
+
+get  '/transactions/:id/edit' do
+  @transactions = Transaction.find( params[:id] )
+  erb( :"transaction/edit" )
+end
+
+post '/transactions/:id' do
+  Transaction.new(params).update
+  redirect to '/transactions'
+end
+

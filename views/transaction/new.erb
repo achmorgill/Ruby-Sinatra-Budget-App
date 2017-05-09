@@ -6,7 +6,8 @@
   <input type="text" id="transactionDate" name="transaction_date">
   
   <label for="userSelect">Select User </label>
-  <select id = "userSelect" name="user_id">
+  <select required id = "userSelect" name="user_id">
+  <option value = "">Please Select</option>
     <% @users.each do |user| %>
     <option value="<%=user.id%>"><%=user.name%></option>
     <%end%>

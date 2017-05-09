@@ -3,21 +3,24 @@
   <table>
     <thead>
       <tr>
+        <th></th>
         <th>Category Type</th>
       </tr>
     </thead>
   </table>
-  
+</tr> 
+
   <tr>
     <% @categories.each do |category|%>
-    <td><%= category.name%></td>
-    <tr>
-    <br>
-      <%end%>
+      <a href="/categories/<%= category.id %>/edit">Update</a>
+      <td><%= category.name%></td>
       <br>
-    </tr>
-
+    <%end%>
+  </tr>
+    
 <a href="/categories/new">Add a New Category</a>
+
+
 
 
 
