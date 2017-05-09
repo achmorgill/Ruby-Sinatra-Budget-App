@@ -6,7 +6,7 @@ class Category
   attr_accessor :name, :logo
 
   def initialize(params)
-    @id = params['id'].to_i
+    @id = params['id'].to_i 
     @name = params['name']
     @logo = params['logo'] 
   end

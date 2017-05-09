@@ -7,14 +7,14 @@ class User
   def initialize(params)
     @name = params['name']
     @budget = params['budget'].to_f
-    @transaction_id = params['transaction_id']
+    # @transaction_id = params['transaction_id']
     @overdraft_limit = params['overdraft_limit'].to_f
     @budget_overspend_flag = params['budget_overspend_flag'].to_i
     @id = params['id'].to_i if !params['id'].nil?
   end
 
   def save()
-    sql =  "INSERT INTO users (name,budget,transaction_id,overdraft_limit,budget_overspend_flag) VALUES ('#{@name}','#{@budget}','#{@transaction_id}','#{@overdraft_limit}',#{@budget_overspend_flag}) RETURNING *"
+    sql =  "INSERT INTO users (name,budget,overdraft_limit,budget_overspend_flag) VALUES ('#{@name}','#{@budget}','#{@overdraft_limit}',#{@budget_overspend_flag}) RETURNING *"
     results = SqlRunner.run(sql).first
     @id = results['id'].to_i
   end

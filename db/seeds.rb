@@ -40,45 +40,60 @@ category4.save
 category5.save
 category6.save
 
+user1 = User.new({
+  'name' => "Gill Liddle",
+  'budget' => "1000.00",
+  'overdraft_limit' => "200.00",
+  'budget_overspend_flag' => "0" 
+  })
+user1.save
+
 transaction1 = Transaction.new({
   'transaction_date' => "2017-5-1",
   'category_id' => category1.id,
+  'user_id'=> user1.id,
   'amount' => 50.00,
   'description' => "Tesco"
   })
 transaction2 = Transaction.new({
   'transaction_date' => "2017-5-2",
   'category_id' => category2.id,
+  'user_id'=> user1.id,
   'amount' => 200.16,
   'description' => "Monthly rent"
   })
 transaction3 = Transaction.new({
   'transaction_date' => "2017-5-3",
   'category_id' => category3.id,
+  'user_id'=> user1.id,
   'amount' => 12.24,
   'description' => "Tesco Petrol"
   })
 transaction4 = Transaction.new({
   'transaction_date' => "2017-5-6",
   'category_id' => category2.id,
+  'user_id'=> user1.id,
   'amount' => 127.18,
   'description' => "Insurance"
   })
 transaction5 = Transaction.new({
   'transaction_date' => "2017-5-9",
   'category_id' => category4.id,
+  'user_id'=> user1.id,
   'amount' => 127.18,
   'description' => "Mobile Phone Topup"
   })
 transaction6 = Transaction.new({
   'transaction_date' => "2017-5-6",
   'category_id' => category5.id,
+  'user_id'=> user1.id,
   'amount' => 127.18,
   'description' => "Gym Membership"
   })
 transaction6 = Transaction.new({
   'transaction_date' => "2017-5-4",
   'category_id' => category5.id,
+  'user_id'=> user1.id,
   'amount' => 127.18,
   'description' => "Theatre Tickets"
   })
@@ -92,14 +107,6 @@ transaction4.save
 transaction5.save
 transaction6.save
 
-user1 = User.new({
-  'name' => "Gill Liddle",
-  'budget' => "1000.00",
-  'transaction_id' => transaction1.id,
-  'overdraft_limit' => "200.00",
-  'budget_overspend_flag' => "0" 
-  })
-user1.save
 
 binding.pry
 nil

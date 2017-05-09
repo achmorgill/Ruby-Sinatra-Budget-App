@@ -5,7 +5,6 @@
   <tr>
     <th>Name          </th>
     <th>Budget        </th>
-    <th>Transaction   </th>
     <th>Overdraft     </th>
     <th>Exceeded Budget     </th>
   </tr>
@@ -16,11 +15,12 @@
   
       <td> <%= user.name %> </td>
       <td> <%= sprintf("%.2f",user.budget)%> </td>
-      <td> <%= user.transaction_id %></td>
       <td> <%= sprintf("%.2f",user.overdraft_limit)%> </td>
       <td> <%= user.budget_overspend_flag %></td>
-    </tr>
+
+    <br>
     <a href="/users/<%= user.id %>/edit">Update Your Details</a>
+
     <% end %>
 
 
