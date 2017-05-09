@@ -12,6 +12,7 @@ end
 get '/transactions/new' do
   @transactions = Transaction.all()
   @categories = Category.all()
+  @users = User.all()
   erb (:"transaction/new")
 end
 

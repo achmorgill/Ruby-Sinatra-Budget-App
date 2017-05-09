@@ -4,15 +4,20 @@
 
   <label for="transactionDate">Date</label>
   <input type="text" id="transactionDate" name="transaction_date">
+  
+  <label for="userSelect">Select User </label>
+  <select id = "userSelect" name="user_id">
+    <% @users.each do |user| %>
+    <option value="<%=user.id%>"><%=user.name%></option>
+    <%end%>
+  </select>
 
   <label for="categorySelect">Select Category </label>
   <select id = "categorySelect" name="category_id">
-
     <% @categories.each do |category| %>
     <option value="<%=category.id%>"><%=category.name%></option>
     <%end%>
   </select>
-
 
   <label for="transactionDesc">Description</label>
   <input type="text" id="transactionDate" name="description">
