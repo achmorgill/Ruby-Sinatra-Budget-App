@@ -1,19 +1,20 @@
 <a href="/">Home Page</a>
 <h2>Total Transactions by Category</h2>
-<br>
+<table>
 <thead>
-  <th>
+  <tr>
     <th>Category</th>
     <th>Total</th>
   </tr>
 </thead>
 <tbody>
-
-<% @categories.each do |category|%>
-  <td><%=category.name%></td>
-  <td><%=category.total_june()%></td>
-  <br>
-  
+  <% @categories.each do |category|%>
+  <tr>
+    <td><%=category.name%></td>
+    <td><%=category.total_june()%></td>
+  </tr>
 <%end%>
 
 </tbody>
+
+</table>

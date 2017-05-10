@@ -1,3 +1,4 @@
+<a href="/">Home Page</a>
 <table>
 <thead>
   <tr>
@@ -7,7 +8,7 @@
     <th>Budget Exceeded     </th>
   </tr>
 </thead>
- 
+
     <% @users.each do |user| %>
   <tr>
       <td> <%= user.name %> </td>
@@ -18,10 +19,9 @@
       <%else%>
         <td> <%= 'YES' %></td>
       <%end%>
-
+<a href="/users/<%= user.id %>/edit">Update Your Details</a>
       <br>
-      <a href="/users/<%= user.id %>/edit">Update Your Details</a>
   <tr>
-    <% end %>    
+
+    <% end %>
 </table>
-<a href="/">Home Page</a>

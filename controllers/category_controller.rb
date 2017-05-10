@@ -7,7 +7,7 @@ get '/categories' do
   @categories = Category.all()
 
   erb (:"category/index")
-end 
+end
 
 get '/categories/totals' do
   @categories = Category.all()
@@ -43,4 +43,3 @@ post '/categories/:id' do
   Category.new(params).update
   redirect to '/categories'
 end
-

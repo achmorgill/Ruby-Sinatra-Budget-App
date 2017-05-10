@@ -1,5 +1,5 @@
-<a href="/">Home Page</a>
-<tr>
+<a id="homePageLink" href="/">Home Page</a>
+
   <table>
     <thead>
       <tr>
@@ -7,22 +7,14 @@
         <th>Category Type</th>
       </tr>
     </thead>
-  </table>
-</tr> 
 
+
+<% @categories.each do |category|%>
   <tr>
-    <% @categories.each do |category|%>
-      <a href="/categories/<%= category.id %>/edit">Update</a>
+      <td><a id="table-update-button" href="/categories/<%= category.id %>/edit">Update</a></td>
       <td><%= category.name%></td>
-      <br>
-    <%end%>
   </tr>
-    
+  <%end%>
+</table>
+
 <a href="/categories/new">Add a New Category</a>
-
-
-
-
-
-
-

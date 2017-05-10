@@ -1,34 +1,60 @@
-.homePage {
-  background: blue url('BudgetMainPage.jpg');
-  background-size: 70% ;
-  background-position: center;
+body {
+  background-color: #B5D3D7;
+  color: black;
+  font-family: Helvetica, Arial, Sans-serif;
+  }
+  a{
+
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+  table{
+    width: 50%;
+    text-align: left;
+  }
+
+
+
+
+
+  .homePage {
+  background: black url('BudgetMainPage.jpg');
+  background-size: 60% ;
+  background-position: right;
   background-repeat: no-repeat;
   color: papayawhip;
   font-family: 'Merriweather', serif;
   padding: 0px;
   margin: 0px;
-}x
 
-
-#homePageWelcomeid {
-  color: black;
 }
-#textboxid
+#homePageName{
+  color: gold;
+  font-size: 3em;
+}
+h1#homePageWelcomeid {
+  font-style: italic;
+  color: ghost white;
+}
+h2#homePageFormBoxClass{
+
+
+}
+.homePageFormBoxClass input
 {
-    height:200px;
-    font-size:14pt;
+    height: 2em;
+    font-size: 1em;
+    border: 1em;
+}
+#homePageLink{
+
 }
 
-.homePageFormBoxClass
-{
-    height:600px;
-    font-size:10pt;
+#table-update-button {
+  text-decoration: none;
+  background-color: cornflowerblue;
+  border: 1px solid;
+  border-radius: 5px;
 }
-
-
-
-
-
-
-
-  
