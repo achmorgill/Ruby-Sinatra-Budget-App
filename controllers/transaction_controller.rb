@@ -14,9 +14,17 @@ get '/transactions/last10' do
  erb(:"transaction/index")
 end
 
-get '/transactions/by_date' do
- @transactions = Transaction.by_date()
- @transactions_total = Transaction.total_transactions_by_date().to_f
+get '/transactions/may' do
+ @transactions = Transaction.may()
+ @transactions_total = Transaction.total_transactions_may().to_f
+ @categories = Category.all()
+ @users = User.all()
+ erb(:"transaction/index")
+end
+
+get '/transactions/june' do
+ @transactions = Transaction.june()
+ @transactions_total = Transaction.total_transactions_june().to_f
  @categories = Category.all()
  @users = User.all()
  erb(:"transaction/index")

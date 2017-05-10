@@ -5,13 +5,23 @@ require_relative('../models/category.rb')
 
 get '/categories' do
   @categories = Category.all()
+
   erb (:"category/index")
 end 
 
 get '/categories/totals' do
   @categories = Category.all()
-  # @category_total = Category.totals(params[:id])
   erb(:"category/totals/index")
+end
+
+get '/categories/totals_may' do
+  @categories = Category.all()
+  erb(:"category/totals_may/index")
+end
+
+get '/categories/totals_june' do
+  @categories = Category.all()
+  erb(:"category/totals_june/index")
 end
 
 get '/categories/new' do

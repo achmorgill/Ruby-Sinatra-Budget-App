@@ -120,13 +120,90 @@ transaction10 = Transaction.new({
   'description' => "Tesco Petrol"
   })
 transaction11 = Transaction.new({
-  'transaction_date' => "2017-5-6",
+  'transaction_date' => "2017-6-6",
   'category_id' => category2.id,
   'user_id'=> user1.id,
-  'amount' => 127.18,
+  'amount' => 100.18,
   'description' => "Gas Bill"
   })
 
+transaction12 = Transaction.new({
+  'transaction_date' => "2017-6-2",
+  'category_id' => category2.id,
+  'user_id'=> user1.id,
+  'amount' => 450.00,
+  'description' => "Monthly rent"
+  })
+transaction13 = Transaction.new({
+  'transaction_date' => "2017-6-3",
+  'category_id' => category3.id,
+  'user_id'=> user1.id,
+  'amount' => 22.24,
+  'description' => "Tesco Petrol"
+  })
+transaction14 = Transaction.new({
+  'transaction_date' => "2017-6-6",
+  'category_id' => category2.id,
+  'user_id'=> user1.id,
+  'amount' => 24.00,
+  'description' => "Insurance"
+  })
+transaction15 = Transaction.new({
+  'transaction_date' => "2017-6-9",
+  'category_id' => category4.id,
+  'user_id'=> user1.id,
+  'amount' => 13.18,
+  'description' => "TSB Visa Bill"
+  })
+transaction16 = Transaction.new({
+  'transaction_date' => "2017-6-6",
+  'category_id' => category6.id,
+  'user_id'=> user1.id,
+  'amount' => 45.00,
+  'description' => "Gym Membership"
+  })
+transaction16 = Transaction.new({
+  'transaction_date' => "2017-6-4",
+  'category_id' => category6.id,
+  'user_id'=> user1.id,
+  'amount' => 87.18,
+  'description' => "Theatre Tickets"
+  })
+transaction17 = Transaction.new({
+  'transaction_date' => "2017-6-2",
+  'category_id' => category1.id,
+  'user_id'=> user1.id,
+  'amount' => 185.40,
+  'description' => "Asda"
+  })
+transaction18 = Transaction.new({
+  'transaction_date' => "2017-6-1",
+  'category_id' => category1.id,
+  'user_id'=> user1.id,
+  'amount' => 21.00,
+  'description' => "Asda"
+  })
+transaction19 = Transaction.new({
+  'transaction_date' => "2017-6-2",
+  'category_id' => category2.id,
+  'user_id'=> user1.id,
+  'amount' => 58.30,
+  'description' => "Electricity Bill"
+  })
+transaction20 = Transaction.new({
+  'transaction_date' => "2017-6-3",
+  'category_id' => category3.id,
+  'user_id'=> user1.id,
+  'amount' => 50,
+  'description' => "Tesco Petrol"
+  })
+transaction21 = Transaction.new({
+  'transaction_date' => "2017-6-6",
+  'category_id' => category2.id,
+  'user_id'=> user1.id,
+  'amount' => 21.22,
+  'description' => "Gas Bill"
+  })
 
 
 transaction1.save
@@ -140,6 +217,16 @@ transaction8.save
 transaction9.save
 transaction10.save
 transaction11.save
+transaction12.save
+transaction13.save
+transaction14.save
+transaction15.save
+transaction16.save
+transaction17.save
+transaction18.save
+transaction19.save
+transaction20.save
+transaction21.save
 
 
 binding.pry

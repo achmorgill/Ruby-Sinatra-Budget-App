@@ -33,9 +33,17 @@ class Transaction
     return results.map{|transaction| Transaction.new(transaction)}
   end
 
-  def Transaction.by_date()
+  def Transaction.may()
     start_date = '1-May-17'
     end_date = '31-may-17'
+    sql = "SELECT * FROM transactions WHERE transaction_date >= '#{start_date}' AND transaction_date <= '#{end_date}' ORDER BY transaction_date"
+    results = SqlRunner.run(sql)
+    return results.map{|transaction| Transaction.new(transaction)}
+  end
+
+  def Transaction.june()
+    start_date = '1-jun-17'
+    end_date = '30-jun-17'
     sql = "SELECT * FROM transactions WHERE transaction_date >= '#{start_date}' AND transaction_date <= '#{end_date}' ORDER BY transaction_date"
     results = SqlRunner.run(sql)
     return results.map{|transaction| Transaction.new(transaction)}
@@ -102,9 +110,17 @@ class Transaction
  end
 
 
-def Transaction.total_transactions_by_date()
+def Transaction.total_transactions_may()
   start_date='1-5-17'
   end_date='31-5-17'
+  sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date >='#{start_date}' AND transaction_date <= '#{end_date}'"
+  total_transactions_by_date = SqlRunner.run(sql).first["total"].to_f
+  return total_transactions_by_date
+end
+
+def Transaction.total_transactions_june()
+  start_date='1-6-17'
+  end_date='30-6-17'
   sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date >='#{start_date}' AND transaction_date <= '#{end_date}'"
   total_transactions_by_date = SqlRunner.run(sql).first["total"].to_f
   return total_transactions_by_date

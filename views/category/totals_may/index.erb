@@ -1,5 +1,6 @@
 <a href="/">Home Page</a>
 <h2>Total Transactions by Category</h2>
+<br>
 <thead>
   <th>
     <th>Category</th>
@@ -10,8 +11,8 @@
 
 <% @categories.each do |category|%>
   <td><%=category.name%></td>
-  <td><%=category.total()%></td>
-  
+  <td><%=category.total_may()%></td>
+  <br>
 <%end%>
 
 </tbody>

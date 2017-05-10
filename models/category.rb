@@ -52,4 +52,21 @@ class Category
     return category_total
   end
 
+  def total_may()
+    start_date= '17-5-1'
+    end_date= '17-5-31'
+    sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date>='#{start_date}' and transaction_date<='#{end_date}' and category_id= #{@id} "
+    category_total = SqlRunner.run(sql).first["total"].to_f
+    return category_total
+  end
+
+  def total_june()
+    start_date= '17-6-1'
+    end_date= '17-6-30'
+    sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date>='#{start_date}' and transaction_date<='#{end_date}' and category_id= #{@id} "
+    category_total = SqlRunner.run(sql).first["total"].to_f
+    return category_total
+  end
+
+
 end
