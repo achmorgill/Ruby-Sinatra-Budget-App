@@ -1,27 +1,29 @@
-<th>Welcome <%= @users.name %></th>
-<br>
-<br>
-<th>Make Your Selection</th>
-<br>
-<br>
-<form method = "get" action ="/users">
-  <input type = "submit" value = "User Details"/>
-</form>
-<br>
-<form method = "get" action ="/categories">
-  <input type = "submit" value = "Categories"/>
-</form>
-<br>
-<form method = "get" action ="/transactions/by_date">
-<input type = "submit" value = " Select Transaction by Date"/>
-</form>
-<br>
-<form method = "get" action ="/transactions/last10">
-<input type = "submit" value = "Your Last 10 Transactions"/>
-</form>
-<br>
-<form method = "get" action ="/transactions">
-<input type = "submit" value = "All Transaction to Date"/>
-</form
+<body class="homePage">
+  <th>Welcome <%= @users.name %></th>
+  <br>
+  <br>
+  <th>Make Your Selection</th>
+  <br>
+  <br>
+  <form method = "get" action ="/users">
+    <input type = "submit" value = "User Details"/>
+  </form>
+  <br>
+  <form method = "get" action ="/categories">
+    <input type = "submit" value = "Categories"/>
+  </form>
+  <br>
+  <form method = "get" action ="/transactions/by_date">
+    <input type = "submit" value = " Select Transaction by Date"/>
+  </form>
+  <br>
+  <form method = "get" action ="/transactions/last10">
+    <input type = "submit" value = "Your Last 10 Transactions"/>
+  </form>
+  <br>
+  <form method = "get" action ="/transactions">
+    <input type = "submit" value = "All Transaction to Date"/>
+  </form>
+</body>
 
 

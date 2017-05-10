@@ -1,14 +1,28 @@
 body {
   padding: 50px;
-  font-family: 'Rye', cursive;
+  font-family: 'Times New Roman', cursive;
   color: #ccad00;
-  background-image: /http://www.anishu.com/images/Icon512.png;
+  background-color; dark blue;
+  
 }
 
-a {
-  text-decoration: none;
-  font-family: 'Rye';
-  color: dark red;
+
+
+.transaction-date{
+  
+  }
+
+.homePage{
+    background-image: url('BudgetMainPage.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px 600px;
+     
+  }
+  
+
+}
+
 
 
 
