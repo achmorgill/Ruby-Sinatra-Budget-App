@@ -46,5 +46,10 @@ class Category
 
   end
 
+  def total()
+    sql = "SELECT sum(amount) as total FROM transactions WHERE category_id = #{@id}"
+    category_total = SqlRunner.run(sql).first["total"].to_f
+    return category_total
+  end
 
 end

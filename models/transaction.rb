@@ -7,6 +7,7 @@ class Transaction
   attr_accessor :transaction_date, :description, :category_id, :amount, :user_id
 
   def initialize (params)
+    @id = params['id'].to_i
     @transaction_date = params['transaction_date']
     @user_id = params['user_id'].to_i
     @category_id = params['category_id'].to_i
@@ -57,7 +58,7 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (date,amount,description) = ('#{@transaction_date}', #{@amount}, '#{@description}') WHERE id = #{@id}"  
+    sql = "UPDATE transactions SET (transaction_date,amount,description) = ('#{@transaction_date}', #{@amount}, '#{@description}') WHERE id = #{@id}"  
     results = SqlRunner.run(sql)
     return results
   end
@@ -81,13 +82,13 @@ class Transaction
      return total_last10.to_f
  end
 
- def Transaction.total_transactions_by_category(id)
-  category_total = 0
-  sql = "SELECT sum(amount),category_id as total FROM transactions WHERE category_id = #{id}"
-  category_total = SqlRunner.run(sql).first["total"].to_f
+ # def Transaction.total_transactions_by_category(id)
+ #  category_total = 0
+ #  sql = "SELECT sum(amount),category_id as total FROM transactions WHERE category_id = #{id}"
+ #  category_total = SqlRunner.run(sql).first["total"].to_f
  
-  return category_total
- end
+ #  return category_total
+ # end
 
  def Transaction.check_within_budget()
 

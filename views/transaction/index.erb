@@ -14,7 +14,7 @@
     <% @transactions.each do |transaction|%>
      
       <td>
-      <a href="/transactions/<%=transaction%>/edit">Update</a>
+      <a href="/transactions/<%=transaction.id%>/edit">Update</a>
       </td>
 
         <td><%=transaction.transaction_date%></td> 

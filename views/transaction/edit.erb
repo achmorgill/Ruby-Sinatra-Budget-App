@@ -1,21 +1,32 @@
-<h2>transactionUpdate</h2>
+<h2>Updating Your Transaction</h2>
 <form method="post" action="/transactions/<%=@transaction.id%>">
 
   <label for="transactionDate">Date</label>
-    <input type="text" value=<%=transaction.transaction_date%> id="transactionDate"name="transaction_date">
+    <input type="text" value=<%=@transaction.transaction_date%> id="transactionDate" name="transaction_date">
 
-  <label for="transactionCategory">Category</label>
-    <input type="text" id="transactionCategory" name="transaction.category_id">
+  <label for="categorySelect">Select Category</label>
+  <select required id = "categorySelect" name="category_id"> 
+        <% @categories.each do |category| %>
+        <option value="<%=category.id%>" <%="selected" if @transaction.user_id == category.id%>><%=category.name%> </option>
+        <%end%>
+      </select>
 
-  <label for="transactionUser">User</label>
-    <input type="text" id="transactionUser" name="transaction.user_id">
+  <label for="userSelect"> Select User</label>
+    <select required id = "userSelect" name="user_id">
+      <% @users.each do |user| %>
+      <option value="<%=user.id%>" <%="selected" if @transaction.user_id == user.id%>><%=user.name%> </option>
+      <%end%>
+    </select>
 
   <label for="transactionAmount">Amount</label>
-    <input type="text" id="transactionUser" name="transaction.amount">
+    <input type="text" id="transactionUser" name="amount" value=<%=@transaction.amount%>>
 
   <label for="transactionDesc">Description</label>
-    <input type="text" id="transactionDesc" name="transaction.description">
+    <input type="text" id="transactionDesc" name="description" value=<%=@transaction.description%>>
 
 
-  <input type="submit" name=transactionUpdate>
+  <input type="submit" name="Updating Your Transaction">
   </form>
+
+
+  <a href="/">Home Page </a>

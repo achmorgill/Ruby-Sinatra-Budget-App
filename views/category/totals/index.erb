@@ -1,0 +1,18 @@
+<a href="/">Home Page</a>
+<h2>Total Transactions by Category</h2>
+<thead>
+  <th>
+    <th>Category</th>
+    <th>Total</th>
+  </tr>
+</thead>
+<tbody>
+
+<% @categories.each do |category|%>
+  <td><%=category.name%></td>
+  <td><%=category.total()%></td>
+  
+<%end%>
+
+</tbody>
+

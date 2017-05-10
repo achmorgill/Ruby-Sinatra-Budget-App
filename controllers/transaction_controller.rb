@@ -44,7 +44,9 @@ post '/transactions' do
 end
 
 get  '/transactions/:id/edit' do
-  @transactions = Transaction.find( params[:id] )
+  @transaction = Transaction.find( params[:id] )
+  @users = User.all()
+  @categories = Category.all()
   erb( :"transaction/edit" )
 end
 

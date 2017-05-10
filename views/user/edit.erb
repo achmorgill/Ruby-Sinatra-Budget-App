@@ -1,18 +1,19 @@
-<h2>userUpdate</h2>
+<h2>Updating User Details</h2>
 
 <form method="post" action="/users/<%= @user.id %>">
 
   <label for="userName">Name </label>
-  <input type="text" value = <%=@user.name%>id="userName" name="name">
+  <input type="text" value="<%=@user.name%>" id="userName" name="name">
 
   <label for="userBudget">Budget </label>
-  <input type="text" id="userBudget" name="budget">
+  <input type="text" id="userBudget" name="budget" value=<%=sprintf("%.2f",@user.budget)%>>
 
   <label for="userOverdraftLimit">Overdraft </label>
-  <input type="text" id="userOverdraftLimit" name="overdraft_limit">
+  <input type="text" id="userOverdraftLimit" name="overdraft_limit" value =<%=sprintf("%.2f",@user.overdraft_limit)%>>
 
-  <label for="userBudgetOverspendFlag">Overdraft_flag </label>
-  <input type="text" id="userBudgetOverspendFlag" name="budget_overspend_flag">
 
-  <input type="submit"  name = "userUpdate">
+  <input type="submit"  name = "Updating User Details">
 </form>
+<a href="/">Home Page </a>
+<br>
+<a href="/users">User Page </a>
