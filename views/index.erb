@@ -1,45 +1,48 @@
 <body class="homePage">
-  <th>Welcome <%= @users.name %></th>
+  <h1 id="homePageWelcomeid">Welcome <%= @users.name %></h1>
+  <h1>Budget4Me</h1>
   <br>
   <br>
   <th>Make Your Selection</th>
   <br>
   <br>
-  <form method = "get" action ="/users">
-    <input type = "submit" value = "User Details"/>
-  </form>
-  <br>
-  <form method = "get" action ="/categories">
-    <input type = "submit" value = "Categories"/>
-  </form>
-  <br>
-  <form method = "get" action ="/transactions/may">
-    <input type = "submit" value = " Select May Transactions"/>
-  </form>
-  <br>
-  <form method = "get" action ="/transactions/june">
-    <input type = "submit" value = " Select June Transactions"/>
-  </form>
-  <br>
-  <form method = "get" action ="/transactions/last10">
-    <input type = "submit" value = "Your Last 10 Transactions"/>
-  </form>
-  <br>
-  <form method = "get" action ="/transactions">
-    <input type = "submit" value = "All Transaction to Date"/>
-  </form>
-  <br>
-  <form method = "get" action ="/categories/totals">
-    <input type = "submit" value = "Transaction totals by Category"/>
-  </form>
-  <br>
-  <form method = "get" action ="/categories/totals_may">
-    <input type = "submit" value = "May - Category Totals"/>
-  </form>
-  <br>
-  <form method = "get" action ="/categories/totals_june">
-    <input type = "submit" value = "June - Category Totals"/>
-  </form>
+  <div class ="homePageFormBoxClass">
+    <form method = "get" action ="/users">
+      <input type = "submit" value = "User Details"/>
+    </form>
+    <br>
+    <form method = "get" action ="/categories">
+      <input type = "submit" value = "Categories"/>
+    </form>
+    <br>
+    <form method = "get" action ="/transactions/may">
+      <input type = "submit" value = " Select May Transactions"/>
+    </form>
+    <br>
+    <form method = "get" action ="/transactions/june">
+      <input type = "submit" value = " Select June Transactions"/>
+    </form>
+    <br>
+    <form method = "get" action ="/transactions/last10">
+      <input type = "submit" value = "Your Last 10 Transactions"/>
+    </form>
+    <br>
+    <form method = "get" action ="/transactions">
+      <input type = "submit" value = "All Transaction to Date"/>
+    </form>
+    <br>
+    <form method = "get" action ="/categories/totals">
+      <input type = "submit" value = "Transaction totals by Category"/>
+    </form>
+    <br>
+    <form method = "get" action ="/categories/totals_may">
+      <input type = "submit" value = "May - Category Totals"/>
+    </form>
+    <br>
+    <form method = "get" action ="/categories/totals_june">
+      <input type = "submit" value = "June - Category Totals"/>
+    </form>
+  </div>
 </body>
 
 
