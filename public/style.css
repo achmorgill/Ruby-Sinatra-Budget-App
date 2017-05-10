@@ -1,10 +1,13 @@
 body {
-  background-color: #B5D3D7;
   color: black;
   font-family: Helvetica, Arial, Sans-serif;
+  background: url('BudgetMainPage.jpg');
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: top right 10px;
+  background-color: #B5D3D7;
   }
   a{
-
     text-decoration: none;
     background-color: white;
     border: 1px solid;
@@ -14,10 +17,6 @@ body {
     width: 50%;
     text-align: left;
   }
-
-
-
-
 
   .homePage {
   background: black url('BudgetMainPage.jpg');

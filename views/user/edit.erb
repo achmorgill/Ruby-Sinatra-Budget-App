@@ -1,3 +1,4 @@
+<a href="/">Home Page </a>
 <h2>Updating User Details</h2>
 
 <form method="post" action="/users/<%= @user.id %>">
@@ -12,8 +13,6 @@
   <input type="text" id="userOverdraftLimit" name="overdraft_limit" value =<%=sprintf("%.2f",@user.overdraft_limit)%>>
 
 
-  <input type="submit"  name = "Updating User Details">
+  <input type="submit"  name="Updating User Details">
 </form>
-<a href="/">Home Page </a>
-<br>
 <a href="/users">User Page </a>

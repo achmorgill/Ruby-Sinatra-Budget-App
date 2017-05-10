@@ -38,7 +38,7 @@ user1 = User.new({
   'name' => "Gill Liddle",
   'budget' => "1000.00",
   'overdraft_limit' => "200.00",
-  'budget_overspend_flag' => "0" 
+  'budget_overspend_flag' => "0"
   })
 user1.save
 
@@ -92,14 +92,14 @@ transaction6 = Transaction.new({
   'description' => "Theatre Tickets"
   })
 transaction7 = Transaction.new({
-  'transaction_date' => "2017-5-1",
+  'transaction_date' => "2017-5-3",
   'category_id' => category1.id,
   'user_id'=> user1.id,
   'amount' => 87.45,
   'description' => "Asda"
   })
 transaction8 = Transaction.new({
-  'transaction_date' => "2017-5-1",
+  'transaction_date' => "2017-5-10",
   'category_id' => category1.id,
   'user_id'=> user1.id,
   'amount' => 50.00,
@@ -231,5 +231,3 @@ transaction21.save
 
 binding.pry
 nil
-
-

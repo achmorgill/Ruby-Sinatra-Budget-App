@@ -1,3 +1,4 @@
+<a href="/">Home Page </a>
 <h2>Updating Your Transaction</h2>
 <form method="post" action="/transactions/<%=@transaction.id%>">
 
@@ -5,7 +6,7 @@
     <input type="text" value=<%=@transaction.transaction_date%> id="transactionDate" name="transaction_date">
 
   <label for="categorySelect">Select Category</label>
-  <select required id = "categorySelect" name="category_id"> 
+  <select required id = "categorySelect" name="category_id">
         <% @categories.each do |category| %>
         <option value="<%=category.id%>" <%="selected" if @transaction.user_id == category.id%>><%=category.name%> </option>
         <%end%>
@@ -27,6 +28,3 @@
 
   <input type="submit" name="Updating Your Transaction">
   </form>
-
-
-  <a href="/">Home Page </a>

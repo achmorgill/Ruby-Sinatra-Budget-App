@@ -1,3 +1,4 @@
+
 require_relative ('../db/sqlrunner.rb')
 class Category
 
@@ -6,7 +7,7 @@ class Category
   attr_accessor :name
 
   def initialize(params)
-    @id = params['id'].to_i 
+    @id = params['id'].to_i
     @name = params['name']
   end
 
@@ -40,7 +41,7 @@ class Category
   end
 
   def update()
-    sql = "UPDATE categories SET (name) = ('#{@name}') WHERE id = #{@id}"  
+    sql = "UPDATE categories SET (name) = ('#{@name}') WHERE id = #{@id}"
     results = SqlRunner.run(sql)
     return results
 
@@ -48,23 +49,29 @@ class Category
 
   def total()
     sql = "SELECT sum(amount) as total FROM transactions WHERE category_id = #{@id}"
+    puts "++++  TOTAL#{sql.inspect}"
     category_total = SqlRunner.run(sql).first["total"].to_f
+    puts "++++++++++++++total #{category_total.inspect}"
     return category_total
   end
 
   def total_may()
-    start_date= '17-5-1'
-    end_date= '17-5-31'
+    start_date= '1-5-17'
+    end_date= '31-5-17'
     sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date>='#{start_date}' and transaction_date<='#{end_date}' and category_id= #{@id} "
+    puts "++++  MAY#{sql.inspect}"
     category_total = SqlRunner.run(sql).first["total"].to_f
+    puts "++++++++++++++total MAY #{category_total.inspect}"
     return category_total
   end
 
   def total_june()
-    start_date= '17-6-1'
-    end_date= '17-6-30'
+    start_date= "1-6-17"
+    end_date= "30-6-17"
     sql = "SELECT sum(amount) as total FROM transactions WHERE transaction_date>='#{start_date}' and transaction_date<='#{end_date}' and category_id= #{@id} "
+    puts "++++  JUNE#{sql.inspect}"
     category_total = SqlRunner.run(sql).first["total"].to_f
+    puts "++++++++++++++total JUNE #{category_total.inspect}"
     return category_total
   end
 
